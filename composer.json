@@ -1,0 +1,52 @@
+{
+    "name": "microscrap/metal",
+    "description": "macOS Metal + AppKit Bindings for The PHP Metal Extension",
+    "type": "library",
+    "version": "0.7.0",
+    "keywords": ["framework", "scrapyard-io", "metal", "bindings", "macos"],
+    "license": "MIT",
+    "homepage": "https://scrapyard-io.projectsaturnstudios.com/ecosystem/microscrap/metal/0.7.x/overview",
+    "authors": [
+        {
+            "name": "Angel Gonzalez",
+            "email": "angel@projectsaturnstudios.com"
+        }
+    ],
+    "require": {
+        "php": "^8.4|^8.5|^8.6",
+        "ext-metal": "^0.7.0"
+    },
+    "require-dev": {
+        "pestphp/pest": "^4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Microscrap\\Bindings\\Metal\\": "src/"
+        },
+        "files": [
+            "src/Helpers/mtl-app.php",
+            "src/Helpers/mtl-window.php",
+            "src/Helpers/mtl-menu.php",
+            "src/Helpers/mtl-device.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DeptOfScrapyardRobotics\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.7.x-dev",
+            "dev-main": "0.7.x-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
