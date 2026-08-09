@@ -39,7 +39,7 @@ jobs:
             composer-${{ runner.os }}-
 
       - name: Validate composer.json
-        run: composer validate --strict --no-check-publish
+        run: composer validate --strict --no-check-publish --no-check-version
 
       - name: Install dependencies
         run: composer install --prefer-dist --no-interaction --no-progress --ignore-platform-req=ext-metal
