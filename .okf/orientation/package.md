@@ -1,9 +1,21 @@
 ---
 type: Orientation
 title: Package (0.7)
-description: Composer identity and wrap model for microscrap/metal
+description: Composer identity, macOS scope, and helpers over Metal\MTL\* for microscrap/metal 0.7.0
 tags: [metal, microscrap, bindings, macos]
+resource: ../composer.json
 status: draft
+generated: { by: okf-documentation-generator/cursor, at: 2026-08-09T02:19:38Z }
+sources:
+  - id: composer
+    resource: ../composer.json
+    title: Package composer.json
+  - id: readme
+    resource: ../README.md
+    title: Package README
+  - id: agents
+    resource: ../AGENTS.md
+    title: Agent guidelines
 ---
 
 # Identity
@@ -13,19 +25,29 @@ status: draft
 | Composer | `microscrap/metal` **0.7.0** |
 | PHP | `^8.4\|^8.5\|^8.6` |
 | Requires | `ext-metal` `^0.7.0` |
-| Platform | macOS only (via extension) |
-| Namespace | `Microscrap\Bindings\Metal\` (Enums when present) |
-| Helpers | `src/Helpers/mtl-{app,window,menu,device}.php` |
+| Platform | **macOS** only (enforced by the extension) |
+| Namespace | `Microscrap\Bindings\Metal\` → `src/` (Enums when present) |
+| Public surface | Global helpers in `src/Helpers/mtl-{app,window,menu,device}.php` |
+| License | MIT |
 
-# Wrap model
+# What this package is
 
-Same tier as **posix / ftdi / cuda**: global helpers call extension statics directly. No microscrap facade classes.
+A **helpers-only** PHP bindings layer over [php-io-extensions/metal](https://github.com/php-io-extensions/metal) (`ext-metal`). Each helper delegates to `Metal\MTL\{App,Window,Menu,Device}` static methods. Opaque handles stay as `int` (`0` = failure / none).[^readme]
 
-| Helpers | Extension |
-|---------|-----------|
-| `mtl_app_*` | `Metal\MTL\App` |
-| `mtl_window_*` | `Metal\MTL\Window` |
-| `mtl_menu_*` | `Metal\MTL\Menu` |
-| `mtl_device_*` / `mtl_command_queue_release` | `Metal\MTL\Device` |
+# What this package is not
 
-Opaque `int` handles pass through unchanged (`0` = failure / none).
+- The native extension (Zephir / ObjC / PIE) — see [relationship to ext-metal](relationship-to-ext.md).
+- Tubes framebuffer / GFX registration — see [metal-gfx out of scope](../related/metal-gfx.md).
+- Facade classes under `Microscrap\Bindings\Metal\` (that is the sdl3/glfw style, not this package).
+
+# Platform wording
+
+User-facing copy says **macOS**, never Darwin. Machine tokens (`uname`, PIE `os-families`) belong in the extension package, not here.[^agents]
+
+# Autoload
+
+Composer autoloads the four helper files via `autoload.files` and PSR-4 for `Microscrap\Bindings\Metal\` → `src/`.[^composer]
+
+[^composer]: Package composer.json
+[^readme]: Package README
+[^agents]: Agent guidelines

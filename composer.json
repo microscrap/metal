@@ -6,6 +6,11 @@
     "keywords": ["framework", "scrapyard-io", "metal", "bindings", "macos"],
     "license": "MIT",
     "homepage": "https://scrapyard-io.projectsaturnstudios.com/ecosystem/microscrap/metal/0.7.x/overview",
+    "support": {
+        "docs": "https://scrapyard-io.projectsaturnstudios.com/ecosystem/microscrap/metal/0.7.x/overview",
+        "issues": "https://github.com/microscrap/metal/issues",
+        "source": "https://github.com/microscrap/metal"
+    },
     "authors": [
         {
             "name": "Angel Gonzalez",

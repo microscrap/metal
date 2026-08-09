@@ -12,6 +12,7 @@ Before changing bindings code or advising on Metal PHP wrappers **for this packa
 4. When you learn something durable about **this package**, update the affected `.okf` concept(s) and append `.okf/log.md`.
 5. Keep the `.okf` bundle at the **package root** only — do not nest extra `.okf` folders under `src/`.
 6. Tubes framebuffer / GFX registration belongs in `microscrap/metal-gfx`. Extension build knowledge belongs with `php-io-extensions/metal`.
+7. **Always** keep the `.okf/` bundle current when changing API, wrap model, or packaging; append `.okf/log.md`.
 
 ## Package rules (quick) — 0.7.x
 
