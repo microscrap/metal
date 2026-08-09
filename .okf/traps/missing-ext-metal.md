@@ -41,7 +41,7 @@ if (! extension_loaded('metal')) {
 pie install php-io-extensions/metal:0.7.x-dev --make-parallel-jobs=1
 ```
 
-Composer `require` declares `"ext-metal": "^0.7.0"`. To install this library on a machine without the extension (docs/CI lint only), use `--ignore-platform-req=ext-metal`. See [Pest + Composer](../build/pest-and-composer.md).
+Composer `require` declares `"ext-metal": "^0.7.1"`. To install this library on a machine without the extension (docs/CI lint only), use `--ignore-platform-req=ext-metal`. See [Pest + Composer](../build/pest-and-composer.md).
 
 [^feature]: AppFeatureTest
 [^readme]: Package README

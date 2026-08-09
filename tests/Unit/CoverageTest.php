@@ -5,12 +5,12 @@ namespace DeptOfScrapyardRobotics\Tests\Unit;
 use DeptOfScrapyardRobotics\Tests\Support\HelperNames;
 
 /**
- * Ensures every ext-metal 0.7.0 static has a microscrap C-ABI helper.
+ * Ensures every ext-metal 0.7.3 static has a microscrap C-ABI helper.
  */
 function metalHelperFunctionNames(): array
 {
     $names = [];
-    foreach (['mtl-app.php', 'mtl-window.php', 'mtl-menu.php', 'mtl-device.php'] as $file) {
+    foreach (['mtl-app.php', 'mtl-window.php', 'mtl-menu.php', 'mtl-device.php', 'mtl-texture.php', 'mtl-input.php'] as $file) {
         $source = file_get_contents(dirname(__DIR__, 2).'/src/Helpers/'.$file);
         preg_match_all("/function_exists\\('([^']+)'\\)/", $source, $matches);
         foreach ($matches[1] as $name) {
@@ -22,7 +22,7 @@ function metalHelperFunctionNames(): array
 }
 
 it('wraps every Metal\\MTL method with its C ABI helper name', function (): void {
-    $map = require dirname(__DIR__).'/Support/extension-methods-0.7.0.php';
+    $map = require dirname(__DIR__).'/Support/extension-methods-0.7.3.php';
     $helpers = metalHelperFunctionNames();
 
     $expected = [];
@@ -48,7 +48,7 @@ it('optionally mirrors live extension reflection when ext-metal is loaded', func
         return;
     }
 
-    $map = require dirname(__DIR__).'/Support/extension-methods-0.7.0.php';
+    $map = require dirname(__DIR__).'/Support/extension-methods-0.7.3.php';
 
     foreach ($map as $extensionClass => $expectedMethods) {
         $ref = new \ReflectionClass($extensionClass);

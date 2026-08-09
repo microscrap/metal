@@ -1,26 +1,26 @@
 ---
 type: APIMap
 title: Helper map (mtl_*)
-description: App / Window / Menu / Device helpers mapped to Metal\MTL\* methods
+description: App / Window / Menu / Device / Texture / Input helpers mapped to Metal\MTL\* methods
 tags: [metal, microscrap, api, helpers]
 resource: ../tests/Support/HelperNames.php
 status: draft
-generated: { by: okf-documentation-generator/cursor, at: 2026-08-09T02:19:38Z }
+generated: { by: cursor-agent/grok-4.5, at: "2026-08-09T06:55:00Z" }
 sources:
   - id: helper-names
     resource: ../tests/Support/HelperNames.php
     title: HelperNames map
   - id: frozen
-    resource: ../tests/Support/extension-methods-0.7.0.php
-    title: Frozen ext-metal 0.7.0 surface
+    resource: ../tests/Support/extension-methods-0.7.3.php
+    title: Frozen ext-metal 0.7.3 surface
   - id: readme
     resource: ../README.md
     title: Package README
 ---
 
-# Surface (ext-metal 0.7.0)
+# Surface (ext-metal 0.7.3)
 
-Frozen method list lives in `tests/Support/extension-methods-0.7.0.php`. C ABI names are enforced by `HelperNames` + `CoverageTest`.[^frozen][^helper-names]
+Frozen method list lives in `tests/Support/extension-methods-0.7.3.php`. C ABI names are enforced by `HelperNames` + `CoverageTest`.[^frozen][^helper-names]
 
 ## App — `Metal\MTL\App`
 
@@ -48,8 +48,12 @@ Frozen method list lives in `tests/Support/extension-methods-0.7.0.php`. C ABI n
 | `mtl_window_attach_device` | `attachDevice` |
 | `mtl_window_get_layer` | `getLayer` |
 | `mtl_window_clear` | `clear` |
+| `mtl_window_get_device` | `getDevice` |
+| `mtl_window_present_texture` | `presentTexture` |
 
 `mtl_window_clear($window, $r, $g, $b, $a = 255)` — integer RGBA **0..255**. See [RGBA clear](../conventions/rgba-clear.md). Attach a device before clear: [attach device before clear](../traps/attach-device-before-clear.md).
+
+`mtl_window_present_texture($window, $texture)` (ext-metal **0.7.2+**) blits an RGBA8 offscreen texture to the window `CAMetalLayer` — used by metal-gfx windowed present (no PHP flush).
 
 ## Menu — `Metal\MTL\Menu`
 
@@ -70,6 +74,39 @@ Frozen method list lives in `tests/Support/extension-methods-0.7.0.php`. C ABI n
 | `mtl_device_get_name` | `getName` |
 
 Note: `releaseCommandQueue` maps to helper name `mtl_command_queue_release` (not `mtl_device_*`).[^helper-names]
+
+## Texture — `Metal\MTL\Texture` (0.7.1+)
+
+Offscreen RGBA8Unorm — no window required. Used by metal-gfx Deferred framebuffers and headless engines/UIs.
+
+| Helper | Extension |
+|--------|-----------|
+| `mtl_texture_create_rgba8` | `create` |
+| `mtl_texture_release` | `release` |
+| `mtl_texture_get_width` | `getWidth` |
+| `mtl_texture_get_height` | `getHeight` |
+| `mtl_texture_clear` | `clear` |
+| `mtl_texture_write_pixel` | `writePixel` |
+| `mtl_texture_read_pixel` | `readPixel` |
+| `mtl_texture_read_rgba8` | `readPixels` |
+
+## Input — `Metal\MTL\Input` (0.7.3+)
+
+Keyboard / mouse / gamepad. Call `mtl_app_poll()` each frame so scroll deltas reset. Enums: `KeyCode`, `MouseButton`, `GamepadButton`, `GamepadAxis`.
+
+| Helper | Extension |
+|--------|-----------|
+| `mtl_input_key_down` | `keyDown` |
+| `mtl_input_mouse_button_down` | `mouseButtonDown` |
+| `mtl_input_mouse_position` | `mousePosition` |
+| `mtl_input_mouse_scroll_delta` | `mouseScrollDelta` |
+| `mtl_input_gamepad_count` | `gamepadCount` |
+| `mtl_input_gamepad_name` | `gamepadName` |
+| `mtl_input_gamepad_button_down` | `gamepadButtonDown` |
+| `mtl_input_gamepad_axis` | `gamepadAxis` |
+| `mtl_input_gamepad_state` | `gamepadState` (PHP snapshot; no dedicated C entry) |
+
+Y grows upward (AppKit). Key codes are macOS virtual key codes. Gamepads use GameController via ext-metal — not SDL/GLFW.
 
 # Minimal loop (from README)
 
@@ -92,4 +129,4 @@ mtl_app_terminate();
 ```
 
 [^helper-names]: HelperNames map
-[^frozen]: Frozen ext-metal 0.7.0 surface
+[^frozen]: Frozen ext-metal 0.7.1 surface

@@ -31,6 +31,8 @@ final class HelperNames
             'attachDevice' => 'mtl_window_attach_device',
             'getLayer' => 'mtl_window_get_layer',
             'clear' => 'mtl_window_clear',
+            'getDevice' => 'mtl_window_get_device',
+            'presentTexture' => 'mtl_window_present_texture',
         ],
         'Metal\\MTL\\Menu' => [
             'installDefault' => 'mtl_menu_install_default',
@@ -43,6 +45,27 @@ final class HelperNames
             'newCommandQueue' => 'mtl_device_new_command_queue',
             'releaseCommandQueue' => 'mtl_command_queue_release',
             'getName' => 'mtl_device_get_name',
+        ],
+        'Metal\\MTL\\Texture' => [
+            'create' => 'mtl_texture_create_rgba8',
+            'release' => 'mtl_texture_release',
+            'getWidth' => 'mtl_texture_get_width',
+            'getHeight' => 'mtl_texture_get_height',
+            'clear' => 'mtl_texture_clear',
+            'writePixel' => 'mtl_texture_write_pixel',
+            'readPixel' => 'mtl_texture_read_pixel',
+            'readPixels' => 'mtl_texture_read_rgba8',
+        ],
+        'Metal\\MTL\\Input' => [
+            'keyDown' => 'mtl_input_key_down',
+            'mouseButtonDown' => 'mtl_input_mouse_button_down',
+            'mousePosition' => 'mtl_input_mouse_position',
+            'mouseScrollDelta' => 'mtl_input_mouse_scroll_delta',
+            'gamepadCount' => 'mtl_input_gamepad_count',
+            'gamepadName' => 'mtl_input_gamepad_name',
+            'gamepadButtonDown' => 'mtl_input_gamepad_button_down',
+            'gamepadAxis' => 'mtl_input_gamepad_axis',
+            'gamepadState' => 'mtl_input_gamepad_state',
         ],
     ];
 

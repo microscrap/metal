@@ -17,8 +17,8 @@ sources:
     resource: ../composer.json
     title: Package composer.json
   - id: frozen
-    resource: ../tests/Support/extension-methods-0.7.0.php
-    title: Frozen ext-metal 0.7.0 surface
+    resource: ../tests/Support/extension-methods-0.7.1.php
+    title: Frozen ext-metal 0.7.1 surface
 ---
 
 # Dev dependencies
@@ -43,7 +43,7 @@ composer update --ignore-platform-req=ext-metal
 | `tests/Unit/StyleAuditTest.php` | No class consts / no throws / `function_exists` / enum rules[^style] |
 | `tests/Feature/AppFeatureTest.php` | Live smoke when `extension_loaded('metal')` |
 
-Frozen surface file: `tests/Support/extension-methods-0.7.0.php`. Naming map: `tests/Support/HelperNames.php`.[^frozen]
+Frozen surface file: `tests/Support/extension-methods-0.7.1.php`. Naming map: `tests/Support/HelperNames.php`.[^frozen]
 
 # Run
 
@@ -56,4 +56,4 @@ When bumping to a new ext-metal minor, update the frozen map + `HelperNames` and
 [^composer]: Package composer.json
 [^coverage]: CoverageTest
 [^style]: StyleAuditTest
-[^frozen]: Frozen ext-metal 0.7.0 surface
+[^frozen]: Frozen ext-metal 0.7.1 surface

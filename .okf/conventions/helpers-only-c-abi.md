@@ -35,7 +35,7 @@ Same tier as **posix / ftdi / cuda** — not the sdl3/glfw facade style.[^readme
 - DataObject handle wrappers.
 - ScrapyardIO ServiceProviders / tubes framebuffer drivers (`metal-gfx`).
 
-See also: [style contract](style-contract.md), [RGBA clear](rgba-clear.md), [metal-gfx out of scope](../related/metal-gfx.md).
+See also: [style contract](style-contract.md), [RGBA clear](rgba-clear.md), [metal-gfx peer](../related/metal-gfx.md).
 
 [^readme]: Package README
 [^agents]: Agent guidelines

@@ -4,7 +4,7 @@ okf_version: "0.2"
 
 # microscrap/metal Knowledge Bundle
 
-Package knowledge for `microscrap/metal` (macOS Metal + AppKit helpers over **ext-metal**, v0.7.0).
+Package knowledge for `microscrap/metal` (macOS Metal + AppKit helpers over **ext-metal**, v0.7.3).
 Read this index first; open only the concepts needed for the task.
 
 **Trust rule:** Prefer `status: stable`. Treat `deprecated` as historical only. New agent-written concepts stay `status: draft` until a human verifies them.
@@ -25,19 +25,19 @@ Read this index first; open only the concepts needed for the task.
 
 # API
 
-* [Helper map (mtl_*)](api/helper-map.md) - App / Window / Menu / Device helpers.
+* [Helper map (mtl_*)](api/helper-map.md) - App / Window / Menu / Device / Texture / Input helpers.
 
 # Conventions
 
 * [Helpers-only C ABI](conventions/helpers-only-c-abi.md) - posix/ftdi/cuda wrap model; no facades.
 * [Style contract](conventions/style-contract.md) - function_exists, no throws, no class consts, UPPERCASE enums.
-* [RGBA clear 0..255](conventions/rgba-clear.md) - integer clear channels matching Window::clear.
+* [RGBA clear 0..255](conventions/rgba-clear.md) - integer clear channels matching Window::clear / Texture::clear.
 
 # Traps
 
 * [Missing ext-metal](traps/missing-ext-metal.md) - Helpers need the loaded extension.
 * [Linux CI without Metal](traps/linux-ci.md) - Unit tests without ext; feature tests skip.
-* [Attach device before clear](traps/attach-device-before-clear.md) - attachDevice before clear.
+* [Attach device before clear](traps/attach-device-before-clear.md) - attachDevice before window clear.
 * [make -j1 is extension-side](traps/make-j1-is-extension.md) - PIE/make flags are for ext-metal.
 
 # Build & test
@@ -46,7 +46,7 @@ Read this index first; open only the concepts needed for the task.
 
 # Related
 
-* [metal-gfx out of scope](related/metal-gfx.md) - Tubes GFX registration is a future peer package.
+* [metal-gfx peer package](related/metal-gfx.md) - Tubes Deferred framebuffer uses Texture helpers.
 
 # Indexes
 

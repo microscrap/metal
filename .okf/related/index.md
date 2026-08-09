@@ -1,3 +1,3 @@
 # Related
 
-* [metal-gfx out of scope](metal-gfx.md) - Tubes GFX / ServiceProviders belong elsewhere.
+* [metal-gfx peer package](metal-gfx.md) - Tubes Deferred framebuffer uses Texture helpers.

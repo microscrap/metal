@@ -2,7 +2,7 @@
     "name": "microscrap/metal",
     "description": "macOS Metal + AppKit Bindings for The PHP Metal Extension",
     "type": "library",
-    "version": "0.7.0",
+    "version": "0.7.3",
     "keywords": ["framework", "scrapyard-io", "metal", "bindings", "macos"],
     "license": "MIT",
     "homepage": "https://scrapyard-io.projectsaturnstudios.com/ecosystem/microscrap/metal/0.7.x/overview",
@@ -19,7 +19,7 @@
     ],
     "require": {
         "php": "^8.4|^8.5|^8.6",
-        "ext-metal": "^0.7.0"
+        "ext-metal": "^0.7.3"
     },
     "require-dev": {
         "pestphp/pest": "^4"
@@ -32,7 +32,9 @@
             "src/Helpers/mtl-app.php",
             "src/Helpers/mtl-window.php",
             "src/Helpers/mtl-menu.php",
-            "src/Helpers/mtl-device.php"
+            "src/Helpers/mtl-device.php",
+            "src/Helpers/mtl-texture.php",
+            "src/Helpers/mtl-input.php"
         ]
     },
     "autoload-dev": {

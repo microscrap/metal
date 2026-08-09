@@ -22,6 +22,9 @@ sources:
   - id: mtl-device
     resource: ../src/Helpers/mtl-device.php
     title: Device helpers
+  - id: mtl-texture
+    resource: ../src/Helpers/mtl-texture.php
+    title: Texture helpers (0.7.1+)
 ---
 
 # Call stack
@@ -29,7 +32,7 @@ sources:
 ```
 PHP app
   → mtl_* helper (this package)
-    → Metal\MTL\{App,Window,Menu,Device}::method (ext-metal)
+    → Metal\MTL\{App,Window,Menu,Device,Texture}::method (ext-metal)
       → C ABI / Objective-C (extension)
 ```
 
@@ -39,7 +42,7 @@ Same tier as **posix / ftdi / cuda**: helpers call extension statics directly. N
 
 | Kind | PHP type | Sentinel |
 |------|----------|----------|
-| Window / device / layer / queue | `int` | `0` = failure / none |
+| Window / device / layer / queue / texture | `int` | `0` = failure / none |
 
 Helpers pass handles through unchanged. Callers check `> 0` for success on create paths (see feature tests).[^mtl-device]
 
@@ -51,6 +54,7 @@ Helpers pass handles through unchanged. Callers check `> 0` for success on creat
 | `mtl-window.php` | `Metal\MTL\Window` |
 | `mtl-menu.php` | `Metal\MTL\Menu` |
 | `mtl-device.php` | `Metal\MTL\Device` |
+| `mtl-texture.php` | `Metal\MTL\Texture` |
 
 Full helper inventory: [API helper map](../api/helper-map.md).
 

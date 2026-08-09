@@ -86,3 +86,17 @@ if (! function_exists('mtl_window_clear')) {
         return Window::clear($window, $r, $g, $b, $a);
     }
 }
+
+if (! function_exists('mtl_window_get_device')) {
+    function mtl_window_get_device(int $window): int
+    {
+        return Window::getDevice($window);
+    }
+}
+
+if (! function_exists('mtl_window_present_texture')) {
+    function mtl_window_present_texture(int $window, int $texture): bool
+    {
+        return Window::presentTexture($window, $texture);
+    }
+}

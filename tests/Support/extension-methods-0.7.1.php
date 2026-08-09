@@ -1,10 +1,7 @@
 <?php
 
 /**
- * Frozen ext-metal 0.7.0 public static surfaces that microscrap/metal must wrap.
- *
- * Keys are Metal\MTL\* FQCN strings. Values are extension method names.
- * Helper names are the C ABI snake_case forms (see HelperNames / CoverageTest).
+ * Frozen ext-metal 0.7.1 public static surfaces that microscrap/metal must wrap.
  *
  * @return array<string, list<string>>
  */
@@ -41,5 +38,15 @@ return [
         'newCommandQueue',
         'releaseCommandQueue',
         'getName',
+    ],
+    'Metal\\MTL\\Texture' => [
+        'create',
+        'release',
+        'getWidth',
+        'getHeight',
+        'clear',
+        'writePixel',
+        'readPixel',
+        'readPixels',
     ],
 ];

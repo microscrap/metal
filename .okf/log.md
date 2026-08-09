@@ -1,5 +1,11 @@
 # OKF log
 
+## 2026-08-09
+
+- **0.7.3**: `mtl_input_*` helpers + `KeyCode` / `MouseButton` / `GamepadButton` / `GamepadAxis` enums over ext-metal `Metal\MTL\Input`. Frozen surface `extension-methods-0.7.3.php`; require `ext-metal` `^0.7.3`. Unblocks `hi-metal-gfx` Human Input.
+- **0.7.2**: `mtl_window_get_device` + `mtl_window_present_texture` for metal-gfx windowed blit present. Frozen surface `extension-methods-0.7.2.php`; require `ext-metal` `^0.7.2`.
+- **0.7.1**: Document Texture helpers (`mtl_texture_*` → `Metal\MTL\Texture`), require `ext-metal` `^0.7.1`, frozen surface `extension-methods-0.7.1.php`. metal-gfx is a peer that consumes Texture for Deferred framebuffers. ScrapyardIO ecosystem seeders updated accordingly.
+
 ## 2026-08-08
 
 - **Update**: README badges + ScrapyardIO prod docs link; GitHub Actions `.github/workflows/tests.yml` (PHP 8.4/8.5, `--ignore-platform-req=ext-metal`); `composer.json` `support.docs/issues/source`.

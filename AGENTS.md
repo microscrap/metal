@@ -16,12 +16,12 @@ Before changing bindings code or advising on Metal PHP wrappers **for this packa
 
 ## Package rules (quick) — 0.7.x
 
-- Composer: `microscrap/metal` **0.7.0**. PHP `^8.4|^8.5|^8.6`. Requires `ext-metal` `^0.7.0`.
+- Composer: `microscrap/metal` **0.7.3**. PHP `^8.4|^8.5|^8.6`. Requires `ext-metal` `^0.7.3`.
 - Namespace: `Microscrap\Bindings\Metal\` → `src/` (Enums when present; helpers are global functions).
-- **Helpers-only** (posix / ftdi / cuda style) — no ServiceProvider, no facade classes over App/Window/Menu/Device.
-- Helper names match the C ABI (`mtl_app_init`, `mtl_window_create`, …).
+- **Helpers-only** (posix / ftdi / cuda style) — no ServiceProvider, no facade classes over App/Window/Menu/Device/Texture/Input.
+- Helper names match the C ABI (`mtl_app_init`, `mtl_window_create`, `mtl_texture_create_rgba8`, `mtl_input_key_down`, …).
 - Opaque handles stay as `int`; do not invent DataObject wrappers unless product scope changes.
 - No exceptions in `src/`; C-style bool/int returns.
-- Enums (if added) are backed (int/string); cases **FULLY UPPERCASE**; no PHP class-level constants.
+- Enums are backed (int/string); cases **FULLY UPPERCASE**; no PHP class-level constants. Input enums: `KeyCode`, `MouseButton`, `GamepadButton`, `GamepadAxis`.
 - User-facing copy says **macOS**, never Darwin (machine tokens like `uname` / PIE `os-families` stay in the extension).
 - Do not conflate with `php-io-extensions/metal` (native extension) or `microscrap/metal-gfx` (tubes).
