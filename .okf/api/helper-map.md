@@ -18,7 +18,7 @@ sources:
     title: Package README
 ---
 
-# Surface (ext-metal 0.7.3)
+# Surface (ext-metal 0.7.4)
 
 Frozen method list lives in `tests/Support/extension-methods-0.7.3.php`. C ABI names are enforced by `HelperNames` + `CoverageTest`.[^frozen][^helper-names]
 
@@ -87,6 +87,7 @@ Offscreen RGBA8Unorm — no window required. Used by metal-gfx Deferred framebuf
 | `mtl_texture_get_height` | `getHeight` |
 | `mtl_texture_clear` | `clear` |
 | `mtl_texture_write_pixel` | `writePixel` |
+| `mtl_texture_fill_rect` | `fillRect` (ext-metal **0.7.4+**) |
 | `mtl_texture_read_pixel` | `readPixel` |
 | `mtl_texture_read_rgba8` | `readPixels` |
 

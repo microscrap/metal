@@ -5,7 +5,7 @@ namespace DeptOfScrapyardRobotics\Tests\Unit;
 use DeptOfScrapyardRobotics\Tests\Support\HelperNames;
 
 /**
- * Ensures every ext-metal 0.7.3 static has a microscrap C-ABI helper.
+ * Ensures every ext-metal 0.7.4 static has a microscrap C-ABI helper.
  */
 function metalHelperFunctionNames(): array
 {
@@ -22,7 +22,7 @@ function metalHelperFunctionNames(): array
 }
 
 it('wraps every Metal\\MTL method with its C ABI helper name', function (): void {
-    $map = require dirname(__DIR__).'/Support/extension-methods-0.7.3.php';
+    $map = require dirname(__DIR__).'/Support/extension-methods-0.7.4.php';
     $helpers = metalHelperFunctionNames();
 
     $expected = [];
@@ -48,7 +48,7 @@ it('optionally mirrors live extension reflection when ext-metal is loaded', func
         return;
     }
 
-    $map = require dirname(__DIR__).'/Support/extension-methods-0.7.3.php';
+    $map = require dirname(__DIR__).'/Support/extension-methods-0.7.4.php';
 
     foreach ($map as $extensionClass => $expectedMethods) {
         $ref = new \ReflectionClass($extensionClass);

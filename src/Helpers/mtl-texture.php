@@ -51,6 +51,25 @@ if (! function_exists('mtl_texture_write_pixel')) {
     }
 }
 
+if (! function_exists('mtl_texture_fill_rect')) {
+    /**
+     * Solid-color rect fill via one Texture::fillRect (ext-metal ≥ 0.7.4).
+     */
+    function mtl_texture_fill_rect(
+        int $texture,
+        int $x,
+        int $y,
+        int $width,
+        int $height,
+        int $r,
+        int $g,
+        int $b,
+        int $a = 255,
+    ): bool {
+        return Texture::fillRect($texture, $x, $y, $width, $height, $r, $g, $b, $a);
+    }
+}
+
 if (! function_exists('mtl_texture_read_pixel')) {
     /**
      * @return array<int, int>

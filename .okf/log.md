@@ -1,5 +1,9 @@
 # OKF log
 
+## 2026-08-12
+
+- **0.7.4**: `mtl_texture_fill_rect` → `Texture::fillRect` (one `replaceRegion` solid rect). Requires `ext-metal` `^0.7.4`. Frozen surface `extension-methods-0.7.4.php`. Fixes metal-gfx `setSegment` / Tetris fillRect lag.
+
 ## 2026-08-09
 
 - **0.7.3**: `mtl_input_*` helpers + `KeyCode` / `MouseButton` / `GamepadButton` / `GamepadAxis` enums over ext-metal `Metal\MTL\Input`. Frozen surface `extension-methods-0.7.3.php`; require `ext-metal` `^0.7.3`. Unblocks `hi-metal-gfx` Human Input.

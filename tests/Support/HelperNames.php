@@ -53,6 +53,7 @@ final class HelperNames
             'getHeight' => 'mtl_texture_get_height',
             'clear' => 'mtl_texture_clear',
             'writePixel' => 'mtl_texture_write_pixel',
+            'fillRect' => 'mtl_texture_fill_rect',
             'readPixel' => 'mtl_texture_read_pixel',
             'readPixels' => 'mtl_texture_read_rgba8',
         ],
