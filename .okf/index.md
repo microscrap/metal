@@ -4,7 +4,7 @@ okf_version: "0.2"
 
 # microscrap/metal Knowledge Bundle
 
-Package knowledge for `microscrap/metal` (macOS Metal + AppKit helpers over **ext-metal**, v0.7.3).
+Package knowledge for `microscrap/metal` (macOS Metal + AppKit helpers over **ext-metal**, v0.7.5).
 Read this index first; open only the concepts needed for the task.
 
 **Trust rule:** Prefer `status: stable`. Treat `deprecated` as historical only. New agent-written concepts stay `status: draft` until a human verifies them.
@@ -37,6 +37,7 @@ Read this index first; open only the concepts needed for the task.
 
 * [Missing ext-metal](traps/missing-ext-metal.md) - Helpers need the loaded extension.
 * [Linux CI without Metal](traps/linux-ci.md) - Unit tests without ext; feature tests skip.
+* [Do not strip CI validate flags](traps/ci-validate-flags.md) - keep `--no-check-version`; no quiet CI flag removals.
 * [Attach device before clear](traps/attach-device-before-clear.md) - attachDevice before window clear.
 * [make -j1 is extension-side](traps/make-j1-is-extension.md) - PIE/make flags are for ext-metal.
 

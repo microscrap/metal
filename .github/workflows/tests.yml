@@ -39,7 +39,9 @@ jobs:
             composer-${{ runner.os }}-
 
       - name: Validate composer.json
-        run: composer validate --strict --no-check-publish
+        # KEEP --no-check-version: composer.json declares `version` for tagging; --strict fails without this.
+        # Do not strip flags "quietly" during OKF/docs drive-bys — see .okf/traps/ci-validate-flags.md
+        run: composer validate --strict --no-check-publish --no-check-version
 
       - name: Install dependencies
         run: composer install --prefer-dist --no-interaction --no-progress --ignore-platform-req=ext-metal

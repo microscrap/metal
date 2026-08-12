@@ -16,7 +16,8 @@ Before changing bindings code or advising on Metal PHP wrappers **for this packa
 
 ## Package rules (quick) — 0.7.x
 
-- Composer: `microscrap/metal` **0.7.3**. PHP `^8.4|^8.5|^8.6`. Requires `ext-metal` `^0.7.3`.
+- Composer: `microscrap/metal` **0.7.5**. PHP `^8.4|^8.5|^8.6`. Requires `ext-metal` `^0.7.4`.
+- **CI:** `.github/workflows/tests.yml` validate **must** keep `--no-check-version` while `composer.json` has a `version` field. Do not strip workflow flags in OKF/docs drive-bys — see `.okf/traps/ci-validate-flags.md`.
 - Namespace: `Microscrap\Bindings\Metal\` → `src/` (Enums when present; helpers are global functions).
 - **Helpers-only** (posix / ftdi / cuda style) — no ServiceProvider, no facade classes over App/Window/Menu/Device/Texture/Input.
 - Helper names match the C ABI (`mtl_app_init`, `mtl_window_create`, `mtl_texture_create_rgba8`, `mtl_input_key_down`, …).

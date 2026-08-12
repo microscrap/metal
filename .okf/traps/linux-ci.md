@@ -35,6 +35,7 @@ Expecting Linux CI to load `ext-metal` or paint windows will fail. The extension
 - Run unit coverage + style on any platform with PHP + Composer (`--ignore-platform-req=ext-metal` if needed).
 - Run feature / live reflection on a macOS host with `ext-metal` loaded.
 - Do not add fake Linux Metal stubs in this package.
+- Keep Actions validate flags intact — especially `--no-check-version` (see [Do not strip CI validate flags](ci-validate-flags.md)).
 
 [^readme]: Package README
 [^feature]: AppFeatureTest
