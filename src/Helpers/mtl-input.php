@@ -47,6 +47,27 @@ if (! function_exists('mtl_input_mouse_scroll_delta')) {
     }
 }
 
+if (! function_exists('mtl_input_mouse_x') && method_exists(Input::class, 'mouseX')) {
+    function mtl_input_mouse_x(int $window = 0): float
+    {
+        return Input::mouseX($window);
+    }
+}
+
+if (! function_exists('mtl_input_mouse_y') && method_exists(Input::class, 'mouseY')) {
+    function mtl_input_mouse_y(int $window = 0): float
+    {
+        return Input::mouseY($window);
+    }
+}
+
+if (! function_exists('mtl_input_mouse_scroll_y') && method_exists(Input::class, 'mouseScrollY')) {
+    function mtl_input_mouse_scroll_y(): float
+    {
+        return Input::mouseScrollY();
+    }
+}
+
 if (! function_exists('mtl_input_gamepad_count')) {
     function mtl_input_gamepad_count(): int
     {

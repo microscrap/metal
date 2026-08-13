@@ -101,6 +101,9 @@ Keyboard / mouse / gamepad. Call `mtl_app_poll()` each frame so scroll deltas re
 | `mtl_input_mouse_button_down` | `mouseButtonDown` |
 | `mtl_input_mouse_position` | `mousePosition` |
 | `mtl_input_mouse_scroll_delta` | `mouseScrollDelta` |
+| `mtl_input_mouse_x` | `mouseX` (scalar; prefer on poll hot path) |
+| `mtl_input_mouse_y` | `mouseY` |
+| `mtl_input_mouse_scroll_y` | `mouseScrollY` |
 | `mtl_input_gamepad_count` | `gamepadCount` |
 | `mtl_input_gamepad_name` | `gamepadName` |
 | `mtl_input_gamepad_button_down` | `gamepadButtonDown` |

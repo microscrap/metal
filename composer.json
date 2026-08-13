@@ -2,7 +2,7 @@
     "name": "microscrap/metal",
     "description": "macOS Metal + AppKit Bindings for The PHP Metal Extension",
     "type": "library",
-    "version": "0.7.5",
+    "version": "0.7.6",
     "keywords": ["framework", "scrapyard-io", "metal", "bindings", "macos"],
     "license": "MIT",
     "homepage": "https://scrapyard-io.projectsaturnstudios.com/ecosystem/microscrap/metal/0.7.x/overview",

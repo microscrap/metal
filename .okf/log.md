@@ -2,6 +2,8 @@
 
 ## 2026-08-12
 
+- **Tetriminos poll retain (debug-641660)**: `mousePosition`/`mouseScrollDelta` Zephir arrays ~112 B/poll; `Menu::pollAction` `RETURN_CTORW` empty string ~32 B/pollNative. Added scalar `mouseX`/`mouseY`/`mouseScrollY`. `pollAction` uses `RETURN_EMPTY_STRING()`. Copy rebuilt `metal.so` to Herd `config/php/84/metal.so` (30-metal.ini absolute path), not only `extensions/`.
+
 - **CI**: Restored `--no-check-version` on `composer validate --strict` after `(0.7.3) - OKF` quietly dropped it and broke Actions again. New trap [ci-validate-flags.md](traps/ci-validate-flags.md): **do not quietly remove CI flags**. Playbook [pest-and-composer.md](build/pest-and-composer.md) documents the required validate line; frozen surface pointer → `0.7.4`.
 - **0.7.5 / 0.7.4**: `mtl_texture_fill_rect` → `Texture::fillRect` (one `replaceRegion` solid rect). Requires `ext-metal` `^0.7.4`. Frozen surface `extension-methods-0.7.4.php`. Fixes metal-gfx `setSegment` / Tetris fillRect lag.
 
